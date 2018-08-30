@@ -34,8 +34,8 @@ public class ScanActivity extends AppCompatActivity implements QRCodeReaderView.
         titleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inent=new Intent(v.getContext(),Scan2Activity.class);
-                startActivity(inent);
+//                Intent inent=new Intent(v.getContext(),Scan2Activity.class);
+//                startActivity(inent);
             }
         });
 
@@ -53,9 +53,18 @@ public class ScanActivity extends AppCompatActivity implements QRCodeReaderView.
         qrCodeReaderView.setBackCamera();
     }
 
+    boolean flag;
     @Override
     public void onQRCodeRead(String text, PointF[] points) {
-        Util.ShowToast(this, "result=" + text);
+//        Util.ShowToast(this, "result=" + text);
+        if (!flag) {
+            flag=true;
+            Intent intent=new Intent(this,Scan2Activity.class);
+            intent.putExtra("code",text);
+            startActivity(intent);
+            finish();
+        }
+
     }
 
     @Override

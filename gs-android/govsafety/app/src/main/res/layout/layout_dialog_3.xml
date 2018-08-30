@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_corners"
+    android:background="@drawable/bg_corners_large"
     android:orientation="vertical">
 
     <TextView
@@ -16,9 +16,9 @@
         android:layout_marginBottom="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_medium"
         android:gravity="center"
+        android:text="警告：你已非法操作"
         android:textColor="@color/dilog_red"
-        android:textSize="16sp"
-        tools:text="警告：你已非法操作" />
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         android:layout_marginLeft="@dimen/margin_medium"
         android:layout_marginRight="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
-        tools:text="你的操作非法，本机已被限制！" />
+        android:text="你的操作非法，本机已被限制！" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,8 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="su123456"
-            android:textColor="@color/dilog_red" />
+            android:textColor="@color/dilog_red"
+            tools:text="su123456" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,8 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="13812345678"
-            android:textColor="@color/dilog_red" />
+            android:textColor="@color/dilog_red"
+            tools:text="13812345678" />
     </LinearLayout>
 
     <TextView
@@ -84,13 +84,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_medium"
         android:layout_marginLeft="@dimen/margin_medium"
-        android:text="已被系统系统警告，并记录！" />
+        android:text="已被系统警告，并记录！" />
 
     <LinearLayout
         android:id="@+id/actionLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/dilog_red"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_corners_large_34"
+        android:backgroundTint="@color/dilog_red"
+        android:layout_marginTop="@dimen/margin_small"
         android:divider="@drawable/divider_v"
         android:orientation="horizontal"
         android:showDividers="middle">
@@ -101,8 +103,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/white"
-            tools:text="关闭软件" />
+            android:text="关闭软件"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/btn2View"

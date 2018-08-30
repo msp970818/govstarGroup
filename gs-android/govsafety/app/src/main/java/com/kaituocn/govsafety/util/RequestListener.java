@@ -8,5 +8,6 @@ public interface RequestListener {
 
     String getUrl();
     Map<String, String> getParams();
+    JSONObject getJsonObj();
     void onResponse(JSONObject jsonObj);
 }

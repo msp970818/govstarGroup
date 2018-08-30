@@ -15,8 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <TextView
+        android:id="@+id/textView10"
         android:layout_width="0dp"
         android:layout_height="@dimen/long_btn_height"
         android:layout_marginTop="16dp"
@@ -24,10 +24,24 @@
         android:paddingLeft="@dimen/margin_medium"
         android:paddingRight="@dimen/margin_medium"
         android:text="开启临时授权"
+        android:gravity="center_vertical"
         android:textColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/long_btn_height"
+        android:background="@color/white"
+        android:button="@null"
+        android:drawableRight="@drawable/switch_btn"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium"
+        android:textColor="@color/text_gray"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView1"
@@ -40,21 +54,35 @@
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <Switch
-        android:id="@+id/switch2"
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="0dp"
         android:layout_height="@dimen/long_btn_height"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:paddingLeft="@dimen/margin_medium"
         android:paddingRight="@dimen/margin_medium"
+        android:gravity="center_vertical"
         android:text="启用账号验证"
         android:textColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/long_btn_height"
+        android:background="@color/white"
+        android:button="@null"
+        android:drawableRight="@drawable/switch_btn"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium"
+        android:textColor="@color/text_gray"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -67,7 +95,7 @@
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
 
     <LinearLayout
@@ -107,39 +135,39 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_medium"
             android:layout_marginTop="@dimen/margin_medium"
-            android:text="当前绑定账号：胡震" />
+            tools:text="当前绑定账号：胡震" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginLeft="@dimen/margin_medium"
-            android:text="初次绑定日期：2017年3月20日  16:25" />
+            android:layout_marginTop="@dimen/margin_small"
+            tools:text="初次绑定日期：2017年3月20日  16:25" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginLeft="@dimen/margin_medium"
-            android:text="绑定设备：VIVO X7" />
+            android:layout_marginTop="@dimen/margin_small"
+            tools:text="绑定设备：VIVO X7" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginLeft="@dimen/margin_medium"
-            android:text="IMEI：123456789" />
+            android:layout_marginTop="@dimen/margin_small"
+            tools:text="IMEI：123456789" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginLeft="@dimen/margin_medium"
-            android:text="品牌：VIVO" />
+            android:layout_marginTop="@dimen/margin_small"
+            tools:text="品牌：VIVO" />
 
     </LinearLayout>
 

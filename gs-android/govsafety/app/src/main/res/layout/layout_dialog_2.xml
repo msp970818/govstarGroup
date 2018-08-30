@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_corners"
+    android:background="@drawable/bg_corners_large"
     android:orientation="vertical">
 
     <TextView
@@ -72,8 +72,10 @@
     <LinearLayout
         android:id="@+id/actionLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/dilog_gray"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/bg_corners_large_34"
+        android:backgroundTint="@color/dilog_gray"
         android:divider="@drawable/divider_v"
         android:orientation="horizontal"
         android:showDividers="middle">

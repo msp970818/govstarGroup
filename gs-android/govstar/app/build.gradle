@@ -35,8 +35,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    //implementation 'me.relex:circleindicator:1.2.1'     此版本下载不了 阿里库也找不到
-    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'me.relex:circleindicator:1.2.1'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
     implementation 'com.contrarywind:Android-PickerView:4.1.4'
