@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/sortAView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_margin="@dimen/margin_small"
+        android:background="@drawable/bg_corners"
+        android:gravity="center"
+        android:text="拍照"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/sortBView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:background="@drawable/bg_corners"
+        android:gravity="center"
+        android:text="更换头像（相册）"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/sortCView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@drawable/bg_corners"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="13sp" />
+</LinearLayout>

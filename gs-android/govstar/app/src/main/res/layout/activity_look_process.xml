@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:divider="@drawable/divider_h_gray"
+    android:showDividers="middle"
+    android:orientation="vertical"
+    tools:context=".work.worklist.LookProcessActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/base_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp" />
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    <include
+        layout="@layout/base_action_layout"
+        android:id="@+id/base_action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/long_btn_height_l" />
+</LinearLayout>

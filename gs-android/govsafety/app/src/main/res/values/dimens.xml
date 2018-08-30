@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_micro">2dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium_s">12dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_medium_l">24dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_large_l">48dp</dimen>
+    <dimen name="margin_huge">64dp</dimen>
+
+    <dimen name="long_btn_height">48dp</dimen>
+</resources>

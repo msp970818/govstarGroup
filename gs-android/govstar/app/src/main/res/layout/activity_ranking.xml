@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".work.rank.RankingActivity">
+    <include
+        android:id="@+id/include"
+        layout="@layout/base_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/tab_stroke"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_corners_14"
+            android:button="@null"
+            android:checked="true"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="@dimen/margin_small"
+            android:textSize="12sp"
+            android:text="单位"
+            android:textColor="@color/check_white_red" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_corners_0"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginRight="-1dp"
+            android:button="@null"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="@dimen/margin_small"
+            android:textSize="12sp"
+            android:text="个人"
+            android:textColor="@color/check_white_red" />
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_corners_23"
+            android:button="@null"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="@dimen/margin_small"
+            android:textSize="12sp"
+            android:text="扣分"
+            android:textColor="@color/check_white_red" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".yunav.player.LiveActivity">
+
+
+
+    <FrameLayout
+        android:id="@+id/render_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.netease.neliveplayer.playerkit.sdk.view.AdvanceSingleTextureView
+            android:id="@+id/live_texture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/player_control_layout"
+        layout="@layout/player_control_layout"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/margin_small"
+        android:background="#33000000"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="4"
+            android:minLines="1"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingLeft="@dimen/margin_medium"
+            android:background="@drawable/bg_corners"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_corners"
+            android:layout_gravity="bottom"
+            android:textSize="13sp"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:text="保存" />
+    </LinearLayout>
+
+</RelativeLayout>

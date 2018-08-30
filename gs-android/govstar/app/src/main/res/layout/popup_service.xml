@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:divider="@drawable/divider_h_gray"
+    android:showDividers="none"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_corners">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_login_service"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@drawable/bg_corners"
+            android:backgroundTint="@color/gs_red"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_tiny"
+            android:paddingTop="@dimen/margin_tiny"
+            android:textColor="@color/white"
+            android:text="访问产品网站"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_tiny"
+            android:paddingTop="@dimen/margin_tiny"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:background="@drawable/bg_corners"
+            android:backgroundTint="@color/gs_red"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"
+            android:text="查看操作说明"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

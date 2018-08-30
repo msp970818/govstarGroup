@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#137ED0</color>
+    <color name="colorPrimaryDark">#137ED0</color>
+    <color name="colorAccent">#137ED0</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#888888</color>
+    <color name="bg_gray">#EEEEEE</color>
+
+    <color name="gs_title">#137ED0</color>
+    <color name="gs_blue">#0087F3</color>
+    <color name="gs_red">#D7410C</color>
+
+    <color name="text_black">#dd000000</color>
+    <color name="text_gray">#888</color>
+
+    <color name="dilog_red">#D92A31</color>
+    <color name="dilog_blue">#0087F3</color>
+    <color name="dilog_gray">#2C2E2F</color>
+    <color name="dilog_green">#21B925</color>
+
+</resources>

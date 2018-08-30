@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>工作台账</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .wrap{
+            background: #f5f5f5;
+        }
+        .lgdtitle{
+            font-size: 12px;
+            color: #888;
+            padding: 10px;
+        }
+        .lgddata{
+            width: 96%;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #393939;
+        }
+        .lgditem{
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .lgditem:last-child{
+            border: none;
+        }
+        .h40 {
+            height: 40px;
+            line-height: 40px;
+        }
+        .h80{
+            height: 80px;
+        }
+        .lgdlabel{
+            /*padding: 0 5px;*/
+            width: 20%;
+            text-align: center;
+        }
+        .lgditem>div:nth-of-type(2){
+            width: 80%;
+            border-left: 1px solid #ccc;
+            padding: 10px 3px;
+        }
+        .ldgdetail>div{
+            display: inline-block;
+        }
+        .ldgdetail:last-child{
+            border: none!important;
+        }
+        .clearbox:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+        .bdb{
+            border-bottom: 1px solid #ccc;
+        }
+        .bdl{
+            border-left: 1px solid #ccc;
+        }
+        .p6{
+            padding: 6px;
+        }
+        .tcenter{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="lgd-head">
+            <p class="lgdtitle">基本信息</p>
+            <div class="lgddata" style="border-color:#eee;padding:6px;border-radius:5px;">
+                <p style="margin-bottom:6px;"><span style="color:#888;">督查标题：</span><span class="tasktitle"></span></p>
+                <p><span style="color:#888;">编号：</span><span id="tasknum"></span></p>
+            </div>
+        </div>
+        <div class="lgd-con">
+            <p class="lgdtitle">工作台账</p>
+            <div class="lgddata">
+                <div class="lgditem">
+                    <div class="lgdlabel">任务名称</div>
+                    <div class="tasktitle"></div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">具体任务</div>
+                    <div id="taskinfo"></div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">要求时间</div>
+                    <div id="taskendt"></div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">限制时间</div>
+                    <div id="taskendat"></div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">负责领导</div>
+                    <div id="taskleader" style="padding:0;">
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                            <!--<div class="h80 p6">假装是内容</div>-->
+                            <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                                <!--<p class="h40 tcenter bdb">leader</p>-->
+                                <!--<p class="h40 tcenter">2018-08-22</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                            <!--<div class="h80 p6">假装是内容</div>-->
+                            <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                                <!--<p class="h40 tcenter bdb">leader</p>-->
+                                <!--<p class="h40 tcenter">2018-08-22</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">主责单位</div>
+                    <div id="maincom" style="padding:0;">
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                            <!--<div class="h80 p6">假装是内容</div>-->
+                            <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                                <!--<p class="h40 tcenter bdb">leader</p>-->
+                                <!--<p class="h40 tcenter">2018-08-22</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                            <!--<div class="h80 p6">假装是内容</div>-->
+                            <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                                <!--<p class="h40 tcenter bdb">leader</p>-->
+                                <!--<p class="h40 tcenter">2018-08-22</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="lgditem">
+                    <div class="lgdlabel">协办单位</div>
+                    <div id="secdcom" style="padding:0;">
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                        <!--<div class="h80 p6">假装是内容</div>-->
+                        <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                        <!--<p class="h40 tcenter bdb">leader</p>-->
+                        <!--<p class="h40 tcenter">2018-08-22</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="ldgdetail clearbox bdb">-->
+                        <!--<div class="h80 p6">假装是内容</div>-->
+                        <!--<div style="width:30%;float:right;border-left:1px solid #ccc;">-->
+                        <!--<p class="h40 tcenter bdb">leader</p>-->
+                        <!--<p class="h40 tcenter">2018-08-22</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var pagedom = {};
+        getPageel();
+        var basehttp = 'http://192.168.3.22:8090/';
+        sendAjax('workParameter/detail');
+
+        function sendAjax(url) {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xmlhttp.open('post',basehttp+'',true);
+            xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xmlhttp.setRequestHeader('Authorization','APPCODE eef1833dbc5748cc86a6419ea0f92d9a');
+            // xmlhttp.send(param);
+            xmlhttp.send(window.location.search.substr(1));
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    var resdata = JSON.parse(xmlhttp.responseText).data;
+                    console.log(resdata);
+                    setPagedata(resdata);
+                }
+            }
+        };
+        function getPageel() {
+            pagedom.tasktitle = document.getElementsByClassName('tasktitle');
+            pagedom.tasknum = getElbyId('tasknum');
+            pagedom.taskinfo = getElbyId('taskinfo');
+            pagedom.taskendt = getElbyId('taskendt');
+            pagedom.taskendat = getElbyId('taskendat');
+            pagedom.taskleader = getElbyId('taskleader');
+            pagedom.maincom = getElbyId('maincom');
+            pagedom.secdcom = getElbyId('secdcom');
+
+        };
+        function setPagedata(res) {
+            //任务信息
+            for (var i=0;i<pagedom.tasktitle.length;i++){
+                pagedom.tasktitle[i].innerText = res.supervisionTitle||'--';
+            };
+            pagedom.tasknum.innerText = res.supervisionNumber||'--';
+            pagedom.taskinfo.innerHTML = res.supervisionInfo||'--';
+            pagedom.taskendt.innerText = res.endTime||'--';
+            pagedom.taskendat.innerText = res.endActualTime||'--';
+            //负责领导
+            var leadnode = '';
+            for (var i=0;i<res.leader.length;i++) {
+                leadnode +=
+                    `<div class="ldgdetail clearbox bdb">
+                        <div class="h80 p6">${res.leader[i].dataInfo}</div>
+                            <div style="width:30%;float:right;border-left:1px solid #ccc;">
+                            <p class="h40 tcenter bdb">${res.leader[i].name}</p>
+                            <p class="h40 tcenter">${res.leader[i].date}</p>
+                        </div>
+                    </div>`
+            }
+            pagedom.taskleader.innerHTML = leadnode||'--';
+            //主责单位
+            var mainnode = '';
+            // res.MainUnit = [
+            //     {info: [{info:'info',user:'user',date:'date'}]},
+            //     {info: [{info:'info',user:'user',date:'date'}]}
+            // ]
+            for (var i=0;i<res.MainUnit.length;i++) {
+                for (var j=0;j<res.MainUnit[i].info.length;j++) {
+                    mainnode +=
+                        `<div class="ldgdetail clearbox bdb">
+                            <div class="h80 p6">${res.MainUnit[i].info[j].info}</div>
+                                <div style="width:30%;float:right;border-left:1px solid #ccc;">
+                                <p class="h40 tcenter bdb">${res.MainUnit[i].info[j].user}</p>
+                                <p class="h40 tcenter">${res.MainUnit[i].info[j].date}</p>
+                            </div>
+                        </div>`
+                }
+            }
+            pagedom.maincom.innerHTML = mainnode||'--';
+
+            //协办单位
+            var secdnode = '';
+            res.secondUnit = [
+                {info: [{info:'info',user:'user',date:'date'}]},
+                {info: [{info:'info',user:'user',date:'date'}]}
+            ]
+            for (var i=0;i<res.secondUnit.length;i++) {
+                for (var j=0;j<res.secondUnit[i].info.length;j++) {
+                    secdnode +=
+                        `<div class="ldgdetail clearbox bdb">
+                            <div class="h80 p6">${res.secondUnit[i].info[j].info}</div>
+                                <div style="width:30%;float:right;border-left:1px solid #ccc;">
+                                <p class="h40 tcenter bdb">${res.secondUnit[i].info[j].user}</p>
+                                <p class="h40 tcenter">${res.secondUnit[i].info[j].date}</p>
+                            </div>
+                        </div>`
+                }
+            }
+            pagedom.secdcom.innerHTML = secdnode||'--';
+        };
+        function getElbyId(id) {
+            return document.getElementById(id);
+        };
+        function getParam(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i");
+            var urlparam = window.location.search.substr(1).match(reg);
+            if (urlparam != null) {
+                return unescape(r[2]);
+            } else {
+                return null;
+            }
+        }
+    </script>
+</body>
+</html>

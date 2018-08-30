@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp">
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:minHeight="72dp"
+        android:background="@color/bg_gray"
+        android:text="秦川" />
+
+    <com.kaituocn.govstar.util.SyncAllHorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="81dp"
+        android:background="@color/bg_gray"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="1440dp"
+                android:layout_height="30dp"
+                android:text="hahhah"
+                android:gravity="center_vertical|right"/>
+        </LinearLayout>
+    </com.kaituocn.govstar.util.SyncAllHorizontalScrollView>
+</FrameLayout>

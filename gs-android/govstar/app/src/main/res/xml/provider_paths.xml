@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths >
+
+    <external-files-path
+        name="aaa"
+        path="/"/>
+    <external-cache-path
+        name="bbb"
+        path="/"/>
+    <files-path
+        name="ccc"
+        path="/"/>
+    <cache-path
+        name="ddd"
+        path="/"/>
+</paths>
+

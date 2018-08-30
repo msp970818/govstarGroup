@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kaituocn.govstar">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 网易云 音视频  =============================start -->
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 多媒体相关 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 如果需要实时音视频通话模块，下面的权限也是必须的。否则，可以不加 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
+    <permission
+        android:name="com.kaituocn.govstar.permission.RECEIVE_MSG"
+        android:protectionLevel="signature" />
+    <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <uses-permission android:name="com.kaituocn.govstar.permission.RECEIVE_MSG" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 网易云 音视频  =============================end -->
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:windowSoftInputMode="stateAlwaysHidden">
+
+        <!-- 网易云 音视频  =============================start -->
+        <meta-data
+            android:name="com.netease.nim.appKey"
+            android:value="81569466e92381d9cf942f48eb52c339" />
+        <!-- 声明网易云通信后台服务，如需保持后台推送，使用独立进程效果会更好。 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService"
+            android:process=":core" />
+
+        <!-- 运行后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService$Aux"
+            android:process=":core" />
+
+        <!-- 声明网易云通信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.job.NIMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":core" />
+
+        <!--
+             网易云通信SDK的监视系统启动和网络变化的广播接收器，用户开机自启动以及网络变化时候重新登录，
+            保持和 NimService 同一进程
+        -->
+        <receiver
+            android:name="com.netease.nimlib.service.NimReceiver"
+            android:exported="false"
+            android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 网易云通信进程间通信 Receiver -->
+        <receiver android:name="com.netease.nimlib.service.ResponseReceiver" />
+
+        <!-- 网易云通信进程间通信service -->
+        <service android:name="com.netease.nimlib.service.ResponseService" />
+        <!-- 申明本地电话状态（通话状态）的广播接收器，第三方APP集成时音视频模块时，如果需要在App中处理网络通话与本地电话的交互请加上此接收器 -->
+        <!-- 在Demo的示例代码中是在Application进行了网络通话与本地电话的互斥处理 -->
+        <receiver android:name=".yunav.receiver.IncomingCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.netease.nimlib.ipc.NIMContentProvider"
+            android:authorities="com.kaituocn.govstar.ipc.provider"
+            android:exported="false"
+            android:process=":core" />
+
+        <!-- 网易云 音视频  ==========================end -->
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a4c548bb5ce71afdfa7c4494ba969042" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.kaituocn.govstar.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".login.FlashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".login.GuideActivity" />
+        <activity android:name=".login.Step1Activity" />
+        <activity android:name=".login.Step1ChoseServiceActivity" />
+        <activity android:name=".login.Step1ScanActivity" />
+        <activity android:name=".login.Step2Activity" />
+        <activity android:name=".login.Step3Activity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.ForgetPasswordActivity" />
+        <activity android:name=".login.ModifyPasswordActivity" />
+        <activity
+            android:name=".set.OperationInfoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".set.SettingActivity" />
+        <activity
+            android:name=".set.CollectActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".set.ServiceActivity" />
+        <activity android:name=".set.ServiceVersionActivity" />
+        <activity
+            android:name=".set.FeedbackListActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".set.ServiceUpgradeActivity" />
+        <activity
+            android:name=".set.ServiceNoticeActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".work.supervision.CreateSupervisionActivity" />
+        <activity
+            android:name=".work.supervisionnotice.SupervisionNoticeActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".work.approval.ApprovalActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".work.worklist.WorkListActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".work.workaccount.WorkAccountActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".work.schedulemanage.ScheduleManageActivity" />
+        <activity
+            android:name=".work.rank.RankingActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".work.visibledata.VisibleDataActivity" />
+        <activity
+            android:name=".work.cloudmeeting.CloudMeetingActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".work.enterprise.EnterpriseServiceActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".work.HelpActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".work.supervision.PersonChoseActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".login.GestureLockerActivity" />
+        <activity
+            android:name=".work.supervisionnotice.CreateSupervisionNoticeActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".work.supervisionnotice.SupervisionNoticeStatusActivity" />
+        <activity android:name=".work.supervisionnotice.CreateInterviewNoticeActivity" />
+        <activity android:name=".work.supervisionnotice.InterviewNoticeStatusActivity" />
+        <activity android:name=".work.supervisionnotice.SignSupervisionNoticeActivity" />
+        <activity android:name=".work.supervisionnotice.SignInterviewNoticeActivity" />
+        <activity android:name=".work.approval.ApprovalDoActivity" />
+        <activity android:name=".work.approval.ApprovalResult1Activity" />
+        <activity android:name=".work.approval.ApprovalResult2Activity" />
+        <activity android:name=".work.worklist.WorkReturnActivity" />
+        <activity android:name=".work.worklist.ApplyDelayActivity" />
+        <activity android:name=".work.worklist.LookProcessActivity" />
+        <activity android:name=".work.worklist.WorkPlanActivity" />
+        <activity android:name=".work.worklist.WorkCorrectedActivity" />
+        <activity
+            android:name=".work.worklist.WorkDoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".work.worklist.WorkDoingActivity" />
+        <activity android:name=".work.worklist.WorkAcceptActivity" />
+        <activity android:name=".work.worklist.AcceptResultActivity" />
+        <activity android:name=".work.schedulemanage.CreateScheduleActivity" />
+        <activity android:name=".work.cloudmeeting.CreateMeetingActivity" />
+        <activity android:name=".work.cloudmeeting.MeetingSignUpActivity" />
+        <activity android:name=".work.cloudmeeting.MeetingNoticeActivity" />
+        <activity android:name=".work.visibledata.CountDataActivity" />
+        <activity android:name=".work.enterprise.SignServiceActivity" />
+        <activity android:name=".set.CreateFeedbackActivity" />
+        <activity
+            android:name=".work.supervision.SupervisionActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".work.cloudmeeting.MapActivity" />
+        <activity android:name=".work.PreviewActivity" />
+        <activity android:name=".login.VerificationActivity" />
+        <activity
+            android:name=".yunav.TeamAVChatActivity"
+            android:launchMode="singleInstance" />
+
+        <receiver
+            android:name=".yunav.MyReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".yunav.VideoPlayerActivity" />
+        <activity android:name=".work.schedulemanage.ScheduleInfoActivity" />
+        <activity android:name=".work.WebViewActivity" />
+        <activity android:name=".set.ServiceClauseActivity" />
+        <activity
+            android:name=".yunav.player.LiveActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".yunav.player.VodActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <!-- ==============  JPush   ============ -->
+        <receiver android:name=".jpush.MyJPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.kaituocn.govstar" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".jpush.MyJPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.kaituocn.govstar" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".work.cloudmeeting.LeaveActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".set.ArticleDetailActivity" />
+        <activity
+            android:name=".set.FeedbackInfoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".work.workaccount.WorkAccountDetailActivity"></activity>
+    </application>
+
+</manifest>

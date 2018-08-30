@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F73939</color>
+    <color name="colorPrimaryDark">#F73939</color>
+    <color name="colorAccent">#C12735</color>
+
+    <color name="gs_red">#C12735</color>
+    <color name="gs_green">#259b24</color>
+    <color name="gs_yellow">#ffc107</color>
+    <color name="gs_blue">#3f51b5</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="bg_gray">#eee</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="text_black">#b000</color>
+    <color name="text_gray">#888</color>
+    <color name="list_divider">#8ddd</color>
+
+    <color name="tag_red">#a93a3a</color>
+    <color name="tag_green">#3aa974</color>
+    <color name="tag_gray">#484848</color>
+
+    <color name="item_green">#1dbf25</color>
+    <color name="item_red">#e64054</color>
+    <color name="item_gray_dark">#3e3e3e</color>
+    <color name="item_blue">#4086e6</color>
+    <color name="item_orange">#ff9c00</color>
+    <color name="item_gray_light">#7a7a7a</color>
+    <color name="item_blue_light">#05f6ff</color>
+    <color name="item_yellow">#ffd800</color>
+    <color name="item_blue_light2">#39c0ff</color>
+
+</resources>

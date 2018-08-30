@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".set.SetFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/margin_large">
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:background="@drawable/bg_title_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/infoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="天津市 - 蓟州区人民政府办公室 -  督查室" />
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/infoView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="胡震" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/headView"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_oval"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/t2"
+            app:layout_constraintBottom_toTopOf="@+id/nameView"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_height_l"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/icon_set_score"
+            android:drawablePadding="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_medium"
+            android:text="我的工作考核成绩"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tagFlowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:max_select="-1" />
+
+        <TextView
+            android:id="@+id/collectView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_height_l"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/icon_set_collect"
+            android:drawablePadding="@dimen/margin_small"
+            android:drawableRight="@drawable/icon_go"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="我的收藏"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tagFlowLayout" />
+
+        <TextView
+            android:id="@+id/serviceView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_height_l"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/icon_set_service"
+            android:drawablePadding="@dimen/margin_small"
+            android:drawableRight="@drawable/icon_go"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="服务中心"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/collectView" />
+
+        <TextView
+            android:id="@+id/setView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/item_height_l"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/icon_set_set"
+            android:drawablePadding="@dimen/margin_small"
+            android:drawableRight="@drawable/icon_go"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="系统设置"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serviceView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/text_black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            tools:text="分(2018)" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="99"
+            android:textColor="@color/gs_red"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+            app:layout_constraintEnd_toStartOf="@+id/textView3" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

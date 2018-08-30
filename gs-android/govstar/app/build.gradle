@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.kaituocn.govstar"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "de014981961a9c9721dae279", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //implementation 'me.relex:circleindicator:1.2.1'     此版本下载不了 阿里库也找不到
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    implementation 'com.contrarywind:Android-PickerView:4.1.4'
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    implementation 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.3'
+    implementation 'com.github.ihsg:PatternLocker:2.1.0'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.amap.api:map2d:latest.integration'
+    implementation 'com.amap.api:search:latest.integration'
+    implementation 'com.zhihu.android:matisse:0.5.0-alpha4'
+    implementation 'me.kareluo.intensify:image:1.1.0'
+    implementation 'com.jacktuotuo.customview:verificationcodeview:1.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.kelin.scrollablepanel:library:1.2.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    //应用角标
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+    //网易音视频
+    // 基础模块
+    implementation 'com.netease.nimlib:basesdk:5.2.0'
+    // 音视频模块(版本号必须和基础模块一样)
+    implementation 'com.netease.nimlib:avchat:5.2.0'
+    implementation 'com.netease.nimlib:nrtc:5.2.0'
+    //视频播放器
+//    implementation 'com.netease.nimlib:neliveplayer:1.9.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs/fastjson-1.1.34.android.jar')
+    implementation project(':playerkit')
+
+    //JPush
+    implementation 'cn.jiguang.sdk:jpush:3.1.5'  // 此处以JPush 3.1.5 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.2.3'  // 此处以JCore 1.2.3 版本为例。
+}

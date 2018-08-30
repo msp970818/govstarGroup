@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <CheckBox
+        android:id="@+id/itemView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_height_l"
+        android:layout_marginTop="1dp"
+        android:background="@color/bg_gray"
+        android:button="@null"
+        android:drawableLeft="@drawable/radio_btn_bg"
+        android:paddingLeft="@dimen/margin_large"
+        android:paddingRight="@dimen/margin_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/headView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="70dp"
+        android:background="@drawable/bg_oval"
+        android:padding="2dp"
+        android:src="@drawable/t2"
+        app:layout_constraintBottom_toBottomOf="@+id/itemView"
+        app:layout_constraintStart_toStartOf="@+id/itemView"
+        app:layout_constraintTop_toTopOf="@+id/itemView" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text_black"
+        app:layout_goneMarginLeft="70dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/itemView"
+        app:layout_constraintStart_toEndOf="@+id/headView"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/lineView"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/list_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemView" />
+
+</android.support.constraint.ConstraintLayout>
